@@ -1,0 +1,75 @@
+.values {
+    padding: 100px;
+    @media (max-width:$bp3) {
+        padding: 70px;
+    }
+    @media (max-width:$bp3) {
+        padding: 50px 30px ;
+    }
+
+    @media (max-width:$bp1) {
+        padding: 10px ;
+    }
+
+    &__content {
+        display: flex;
+        @media (max-width:$bp3) {
+            flex-wrap: wrap;
+        }
+
+        &_text, &_image {
+            flex: 1 1 50%;
+            @media (max-width:$bp3) {
+            flex: 1 1 100%;
+            }
+        }
+
+        &_image {
+            padding: 10% 10% 0;
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+            @media (max-width:$bp3) {
+                min-height: 500px;
+                border-top-right-radius: 0;
+                border-bottom-left-radius: 30px;
+                border-bottom-right-radius: 30px;
+                padding: 10%;
+            }
+        }
+
+        &_text {
+            background: $primary;
+            padding: 5% 0 5% 10%;
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+            @media (max-width:$bp3) {
+                border-top-right-radius: 30px;
+                border-top-left-radius: 30px;
+                border-bottom-left-radius: 0px;
+                padding: 5%;
+            }
+        }
+
+        &_text-title {
+            @include fontz(25px,16);
+            max-width: 600px;
+            span {
+                color: $white;
+            }
+        }
+
+        &_text-dystance {
+            @include fontz(16px,6);
+            max-width: 600px;
+            color: $white;
+            margin: 40px 0;
+        }
+
+        &_text-atantion {
+            @include fontz(14px,4);
+            max-width: 600px;
+        }
+    }
+
+
+}

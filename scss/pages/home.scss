@@ -1,0 +1,307 @@
+.banner {   
+    padding-bottom: 100px;
+  
+
+    .container {
+        @media (min-width:$bp4) {
+            padding:0 0 0 30px;
+        }
+        
+    }
+
+    &__content {
+        border-radius: 30px;
+
+        &_wrap {
+            padding:50px 0 0 50px ;
+            @media (max-width:$bp3) {
+                padding:7%;
+            }
+        }
+        
+        
+        &_text {
+            padding-left: 20px;
+            border-left: 3px solid $white;
+        }
+        
+        &_title ,&_sub-title {
+            color: $white;
+        }
+
+        &_title {
+            @include fontz(27px,27);
+            text-transform: uppercase;
+            span {
+                color: $font;
+            }
+        }
+
+        &_sub-title {
+            font-family: $pop;
+            font-weight: 200;
+        }
+    }
+
+    &__delivery {   
+        @media (min-width:$bp3) {
+            position: relative;
+            top: 100px;
+            left: 10px;
+        }
+        @media (max-width:$bp3) {
+            margin-top: 50px;;
+        }
+        background-color: $primary;
+        max-width: 400px;
+        color: #fff;
+        border-radius: 20px;
+
+        &_wrap {
+            padding: 10% ;
+        }
+
+        &_name {
+            @include fontz(8px,2);
+            text-transform: uppercase;
+            border: 1px solid $white;
+            border-radius: 20px;
+            display: inline-block;
+            padding: 7px 15px;
+            margin-bottom: 40px;
+        }
+
+        &_title {
+            @include fontz(20px,12);
+            font-weight: 600;
+        }
+
+        &_buttons {
+            margin: 30px 0 ;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        &_time {
+            padding: 25px 0 0;
+        }
+
+        &_delivery-time {
+            @include fontz(12px,3);
+            padding: 10px 20px;
+            background-color: $font;
+            text-align: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            width: 100%;
+        }
+    }
+}
+
+.choose-sets {
+    padding: 150px 0 0px;
+    @media (max-width:$bp3) {
+        padding: 50px 0;
+    }
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        max-width: $width;
+        margin: 0 auto;
+        @media (max-width:$bp2) {
+            flex-wrap: wrap;
+            gap: 30px 0 ;
+            justify-content: center;
+        }
+       
+    }
+
+    &__link {
+        flex: 1 1 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        @media (max-width:$bp2) {
+            flex: 1 1 33%;
+        }
+        @media (max-width:$bp1) {
+            flex: 1 1 100%;
+        }
+
+        &_title  {
+            color: $font;
+            @include fontz(15px,2);
+            transition: 0.3s;
+        }
+
+        &_count {
+            color : $gray;
+            font-size: 14px;
+            font-family: $pop;
+        }
+
+        &:hover {
+            .choose-sets__link_title {
+                color: $primary;
+            }
+        }
+    }
+}
+
+.sale {
+    padding: 50px 0;
+    @media (min-width:$bp3) {
+        margin-bottom: 75px;
+    }
+
+    &__title {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    &__slide {
+        margin: 10px;
+        img {
+            border-radius: 20px;
+        }
+    }
+}
+
+.new {
+    background-color:  $light-gray;
+    &__wrap {
+        display: flex;
+        align-items: center;
+        @media (max-width:$bp4) {
+            flex-wrap: wrap-reverse;
+        }
+    }
+
+    &__image, &__content {
+        flex: 1 1 50%;
+        @media (max-width:$bp4) {
+            flex: 1 1 100%;
+            padding: 5%;
+        }
+    }
+
+    &__image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @media (max-width:$bp2) {
+            display: none;
+        }
+    }
+
+    &__content {
+        padding: 100px 1%;
+        @media (max-width:$bp4) {
+            padding: 5%;
+        }
+        &_title {
+            @include fontz(30px,32);
+            span {
+                color: $primary;
+            }
+        }
+
+        &_description {
+            max-width: 600px;
+            color: $gray;
+        }
+
+        &_newses {
+            margin-top: 50px;
+            display: flex;
+          
+            @media (max-width:$bp1) {
+                flex-wrap: wrap;
+                justify-content: center;
+                margin: 10px 0;
+            }
+        }
+
+        &_news {
+            background: $white;
+            border-radius: 20px;
+            padding: 20px 30px;
+            transition: 0.3s;
+            margin: 20px;
+            &:hover {
+                background: $primary;
+
+                .new__content_news-custom-name {
+                    border: 1px solid $white;
+                    color: $white;
+                }
+
+                .new__content_news-title, .new__content_descr {
+                    color: $white
+                }
+            }
+            @media (max-width:$bp1) {
+                margin: 10px 0;
+            }
+        }
+
+        &_news-custom-name {
+            @include fontz(10px,2);
+            text-transform: uppercase;
+            border: 1px solid $primary;
+            color: $primary;
+            border-radius: 20px;
+            display: inline-block;
+            padding: 7px 15px;
+        }
+
+        &_news-title {
+            @include fontz(18px,6);
+            color: #000;
+            margin: 15px 0;
+        }
+
+        &_descr {
+            @include fontz(13px,2);
+            color: $gray;
+            max-width: 300px;
+            margin-bottom: 40px;
+        }
+    }
+}
+
+.rolly {
+    background-color:  $light-gray;
+    padding: 50px 0;
+    .container{
+        border-bottom: 1px solid $primary;
+    }
+
+    &__title {
+        text-align: center;
+    }
+
+    &__categories {
+       margin-bottom: 30px;   
+
+        &_item {
+           padding: 20px 0 ;
+            margin: 010px;
+           .btn {
+            white-space: nowrap;
+            width: 100%;
+            display: flex ;
+            align-items: center;
+            justify-content: center
+           }
+        }
+
+    }
+
+    .rolls {
+        margin-bottom: 50px;
+    }
+}

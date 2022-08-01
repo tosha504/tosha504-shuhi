@@ -1,0 +1,199 @@
+.header {
+    transition: 0.3s ; 
+    width: 100%;
+
+     &__box, &__menu {
+        display: flex;
+        align-items: center;
+    }
+
+    &__pre {
+        display: flex;
+        justify-content: flex-end;
+        a {
+            margin: 10px;
+            max-width: 30px;
+            width: 100%;
+            max-height: 30px;
+            height: 100%;
+        }
+    }
+
+    &__box {
+        padding: 0 0 20px ;
+        justify-content: flex-end;
+        @media (max-width:$bp4) {
+            justify-content: space-between;
+            padding: 20px 30px;
+        }
+        @media (max-width:$bp1) {
+            padding: 0px 15px;
+        }
+    }
+    &__menu-shop {
+        display: flex;
+        align-items: center;
+
+        &_count {
+            top: -12px;
+            position: relative;
+            right: 0;
+            font-size: 13px;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: $primary;
+            color: $white;
+        }
+
+        
+        @media (max-width:$bp4) {
+            position: absolute;
+            right: 8%;
+        }
+        @media (max-width:$bp3) {
+            right: 10%;
+        }
+        @media (max-width:$bp2) {
+            right: 14%;
+        }
+        @media (max-width:$bp1) {
+            right: 17%;
+        }
+
+        .btn__primary {
+            margin-left: 20px;
+        }
+    }
+
+    &__menu {
+        @media (max-width: $bp4) {  
+            padding: 50px;
+            background-color: $primary;
+            position: fixed;
+            left: -100%;
+            top: 0;
+            bottom: 0;
+            z-index: 1000;
+            align-items: start;
+            flex-direction: column;
+            overflow: auto;
+            transition: all .5s ease 0s;
+            
+            
+            &.active {
+                display: flex;
+                width: 80%;
+                left: 0;
+                a {
+                    color: $white;
+                }
+            }
+        }
+       
+        
+        
+        @media (min-width:$bp4) {
+            margin: 0 30px 0 0;
+        }
+        
+        li {
+            margin: 10px 0;
+            &:not(:last-child) {
+                @media (min-width:$bp4) {
+                    margin-right: 20px;
+                }
+                @media (min-width:$bp5) {
+                    margin-right: 35px;
+                }
+            }
+        }
+
+        a {
+            white-space: nowrap;
+            color: $font;
+            font-size: 18px;
+            font-weight: 600;
+            @media (min-width:$bp4) {
+                &:hover {
+                    color: $primary;
+                }
+            }
+            
+        }
+    }
+
+    &__logo {
+        @media (max-width:$bp4) {
+            max-width: 80%;
+        }
+        img {
+            width: 70%;
+        }
+    }
+
+    .btn {
+        @media (max-width:$bp4) {
+            display: none;
+        }
+    }    
+
+    &__navigation {
+        display: flex;
+        align-items: center;
+        margin-right: 30px;
+    }
+
+    &__burger {
+        z-index: 3;
+        display: none;
+        position: relative;
+        width: 40px;
+
+        span {
+            background-color: $primary;
+            height: 3px;
+            width: 40px;
+            position: absolute;
+            transition: 0.4s;
+
+            &:before, &:after{
+                background-color: $primary;
+                width: 40px;
+            }
+        
+            &:before {
+              position: absolute;
+              top: 8px;
+              content: "";
+              height: 3px;
+              transition: 0.4s;
+
+            }
+            &:after {
+              position: absolute;
+              bottom: 8px;
+              content: "";
+              height: 3px;
+            }
+        
+            &.active {
+              transform: rotate(-45deg);
+              &:before {
+                transform: rotate(90deg);
+                top: 0;
+              }
+              &::after {
+                opacity: 0;
+              }
+            }
+        }
+
+        @media (max-width: $bp4) {
+            display: block;
+        }
+    }
+}

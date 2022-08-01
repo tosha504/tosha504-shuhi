@@ -1,0 +1,26 @@
+._cart-info {
+    background-color: $primary;
+    color: $white;
+
+    &__box {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    &__catname {
+        border: 1px solid $white;
+        color: $white;
+        flex: 1 0 44%;
+    }
+
+    &__time {
+        font-size: 14px;
+        padding-top: 0 !important;
+    }
+
+    &__buttons {
+        .btn {
+            font-size: 12px;
+        }
+    }
+}
