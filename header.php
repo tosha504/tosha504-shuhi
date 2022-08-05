@@ -25,20 +25,9 @@
 <div id="page" class="wrapper">
 
 	<header id="masthead" class="header">
-		<?php 
-		$header = get_field( 'header', 'options' );
-		$header_socials = $header['soicals_header'];
-		if($header_socials) { ?>
-		<div class="header__pre container">
-		 	<?php foreach ($header_socials as $social) { ?> 
-				<a href="<?php echo $social['link']; ?>" target="_blank"><?php echo wp_get_attachment_image( $social['image'], 'full' ); ?></a>
-			<?php } ?>
-		</div>
-		<?php } ?>
-		
 		<div class="header__box container">
 			<?php
-			
+			$header = get_field( 'header', 'options' );
 			$logo = $header['logo'];
 			if( $logo ) { ?>  
 				<div class="header__logo">

@@ -107,9 +107,9 @@ $(document).ready(function () {
     arrows: false,
     swipeToSlide: true,
     responsive: [{
-      breakpoint: 1205,
+      breakpoint: 1441,
       settings: {
-        slidesToShow: 5
+        slidesToShow: 6
       }
     }, {
       breakpoint: 1025,
@@ -290,18 +290,16 @@ $(document).ready(function () {
 
     input.trigger("change");
   });
+  var timeout;
+  $('.woocommerce').on('change', 'input.qty', function () {
+    if (timeout !== undefined) {
+      clearTimeout(timeout);
+    }
 
-  function preHeaderDisplay(params) {
-    $(window).on('scroll', function (e) {
-      if ($(window).scrollTop() === 0) {
-        $('.header__pre').slideDown();
-      } else {
-        $('.header__pre').slideUp();
-      }
-    });
-  }
-
-  preHeaderDisplay(); //check to see if the submited cookie is set, if not check if the popup has been closed, if not then display the popup
+    timeout = setTimeout(function () {
+      $("[name='update_cart']").trigger("click"); // trigger cart update
+    }, 100); // 1 second delay, half a second (500) seems comfortable too
+  }); //check to see if the submited cookie is set, if not check if the popup has been closed, if not then display the popup
 
   if (getCookie('popupCookie') != 'submited') {
     $('.cookies').css("display", "block").hide().fadeIn(2000);

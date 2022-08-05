@@ -91,7 +91,7 @@ $footer_info = get_field( 'info', 'options' ); ?>
 		</div>
 	</div>
 
-	<div class="arrowUp"> &#8679;</div>
+	<div class="arrowUp"><img src="<?php echo get_template_directory_uri() . '/assets/img/up-arrow.svg'?>" alt=""></div>
 
 
 	<div class="cookies">

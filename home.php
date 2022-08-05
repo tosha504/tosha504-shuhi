@@ -11,10 +11,7 @@ get_header(); ?>
 		<?php 
 		$banner = get_field('banner');
 		$bg_image = $banner['bg_image'];
-		$title = $banner['title'];
-		$sub_title = $banner['sub_title'];
 		$delivery = $banner["delivery"];
-		$name = $delivery["name"];
 		$delivery_title = $delivery["title"];
 		$name = $delivery["name"];
 		$time = $delivery["time"];
@@ -25,14 +22,8 @@ get_header(); ?>
 			<div class="container">
 				<div class="banner__content" <?php if( $bg_image){ echo 'style="background: url(' .wp_get_attachment_image_url( $bg_image, 'full') .')no-repeat center/cover"' ; }?>>
 					<div class="banner__content_wrap">
-						<div class="banner__content_text">
-							<?php if($title) {?><h1 class="banner__content_title"><?php echo $title; ?></h1><?php } ?>
-							<?php if($sub_title) {?><p class="banner__content_sub-title"><?php echo $sub_title; ?></p><?php } ?>
-						</div>
-
 						<div class="banner__delivery">
 							<div class="banner__delivery_wrap">
-								<?php if($name) {?><p class="banner__delivery_name"><?php echo $name; ?></p><?php } ?>
 								<?php if($delivery_title) {?><p class="banner__delivery_title"><?php echo $delivery_title; ?></p><?php } ?>
 								<div class="banner__delivery_buttons">
 									<?php

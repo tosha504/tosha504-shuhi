@@ -69,7 +69,7 @@ function cart() {
 	<div class="categories__wrap">
 	<p class="categories__wrap_catname"><?php  echo $product_cat_name; ?></p>
 	<h2 class="categories__wrap_title" ><?php echo $word_count; ?></h2> 
-	<p class="categories__wrap_excerpt"><?php echo wp_trim_words( get_the_excerpt(), 7 ) ?></p>
+	<p class="categories__wrap_excerpt"><?php echo wp_trim_words( get_the_excerpt($_product->id), 7 ); ?></p>
 	<div class="categories__wrap_image" > 
 		<?php echo wp_get_attachment_image($post_thumbnail_id, 'gallery-thumbnail-2') ?>
 

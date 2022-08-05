@@ -1,7 +1,6 @@
 .banner {   
     padding-bottom: 100px;
   
-
     .container {
         @media (min-width:$bp4) {
             padding:0 0 0 30px;
@@ -19,38 +18,43 @@
             }
         }
         
+        // &_text {
+        //     padding-left: 20px;
+        //     border-left: 3px solid $white;
+        // }
         
-        &_text {
-            padding-left: 20px;
-            border-left: 3px solid $white;
-        }
-        
-        &_title ,&_sub-title {
-            color: $white;
-        }
+        // &_title ,&_sub-title {
+        //     color: $white;
+        // }
 
-        &_title {
-            @include fontz(27px,27);
-            text-transform: uppercase;
-            span {
-                color: $font;
-            }
-        }
+        // &_title {
+        //     @include fontz(27px,27);
+        //     text-transform: uppercase;
+        //     span {
+        //         color: $font;
+        //     }
+        // }
 
-        &_sub-title {
-            font-family: $pop;
-            font-weight: 200;
-        }
+        // &_sub-title {
+        //     font-family: $pop;
+        //     font-weight: 200;
+        // }
     }
 
     &__delivery {   
-        @media (min-width:$bp3) {
             position: relative;
+        @media (min-width:$bp3) {
             top: 100px;
             left: 10px;
         }
+
+        @media (max-width:$bp1) {
+            top: 300px;
+            left: 10px;
+        }
+
         @media (max-width:$bp3) {
-            margin-top: 50px;;
+            margin-top: 50px;
         }
         background-color: $primary;
         max-width: 400px;
@@ -61,15 +65,15 @@
             padding: 10% ;
         }
 
-        &_name {
-            @include fontz(8px,2);
-            text-transform: uppercase;
-            border: 1px solid $white;
-            border-radius: 20px;
-            display: inline-block;
-            padding: 7px 15px;
-            margin-bottom: 40px;
-        }
+        // &_name {
+        //     @include fontz(8px,2);
+        //     text-transform: uppercase;
+        //     border: 1px solid $white;
+        //     border-radius: 20px;
+        //     display: inline-block;
+        //     padding: 7px 15px;
+        //     margin-bottom: 40px;
+        // }
 
         &_title {
             @include fontz(20px,12);
@@ -104,6 +108,10 @@
     @media (max-width:$bp3) {
         padding: 50px 0;
     }
+    @media (max-width:$bp1) {
+        margin-top: 350px;
+    }
+
     .container {
         display: flex;
         align-items: center;

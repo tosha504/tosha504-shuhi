@@ -128,9 +128,9 @@ $(document).ready(function(){
         swipeToSlide: true,
         responsive: [
             {
-                breakpoint:1205,
+                breakpoint:1441,
                 settings: {
-                    slidesToShow: 5
+                    slidesToShow: 6
                 }
             },
             {
@@ -307,7 +307,6 @@ $(document).ready(function(){
         $("html, body").animate({ scrollTop: 0 }, 800);
     });
 
-
     $('body').on('click', '.cart-qty.plus, .cart-qty.minus', function(e) {
         e.preventDefault();
         const input = $(this).parent().find('.input-text.qty.text');
@@ -323,27 +322,26 @@ $(document).ready(function(){
                 input.attr('value',input_val - 1)
             }
         }
+      
         input.trigger("change");
-    });    
+       
+    });  
+    
+		let timeout;
+		$('.woocommerce').on('change', 'input.qty', function(){
+			if ( timeout !== undefined ) {
+				clearTimeout( timeout );
+			}
+			timeout = setTimeout(function() {
+				$("[name='update_cart']").trigger("click"); // trigger cart update
+			}, 100 ); // 1 second delay, half a second (500) seems comfortable too
+		});
+	
 
-    function preHeaderDisplay(params) {
-        $(window).on('scroll', function (e) {
-            if($(window).scrollTop() === 0) {
-                $('.header__pre').slideDown();
-            } else {
-                $('.header__pre').slideUp();
-            }
-        }) 
-    }
-
-    preHeaderDisplay();
-
-        //check to see if the submited cookie is set, if not check if the popup has been closed, if not then display the popup
+    //check to see if the submited cookie is set, if not check if the popup has been closed, if not then display the popup
     if( getCookie('popupCookie') != 'submited'){ 
     $('.cookies').css("display", "block").hide().fadeIn(2000);
     }
-
-
 
     $('a.submit').click(function(){
     $('.cookies').fadeOut();

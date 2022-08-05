@@ -240,3 +240,11 @@ function hide_product_page($args){
     $args["public"] = false;
     return $args;
 }
+
+/**
+ * Disable WooCommerce block styles (front-end).
+ */
+function themesharbor_disable_woocommerce_block_styles() {
+	wp_dequeue_style( 'wc-blocks-style' );
+}
+add_action( 'wp_enqueue_scripts', 'themesharbor_disable_woocommerce_block_styles' );
