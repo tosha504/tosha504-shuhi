@@ -1,0 +1,192 @@
+body {
+    
+    &.woocommerce-account {
+        .select,
+        .u-columns {
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            
+        }
+
+        .select {
+            @media (max-width:$bp1) {
+                justify-content: space-between;
+            }
+            h2 {
+                margin: 0 10%;
+                @media (max-width:$bp1) {
+                    margin: 0 auto;
+                }
+            }
+
+            &__item {
+                transition: 0.35s;
+                @include fontz(16px, 6);
+                padding: 10px 20px;
+                border-radius: 40px;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .u-columns {
+            .col-1, .col-2 {
+                max-width: 600px;
+                @media (max-width:$bp4) {
+                    max-width: 500px;
+                }
+                @media (max-width:$bp2) {
+                    max-width: 400px;
+                }
+                flex: 1 1 100%;
+                display: flex;
+                flex-direction: column;
+            } 
+
+            .d-none {
+                display: none;
+            }
+        }
+
+        input[type="text"], input[type="email"],input[type="password"], textarea  {
+            width: 100%;
+            border: 1px solid #ccc;
+            padding: 10px;
+            font-size: 14px;
+            font-family: $pop;
+            border-radius: 20px;
+        }
+
+        .woocommerce-form-row {
+            label {
+                font-size: 12px;
+                top: -10px;
+                left: 15px;
+                z-index: 1;
+                background: #fff;
+                padding: 0 10px;
+            }
+        } 
+
+        .form-row {
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+
+            button {
+                margin: 10px auto;
+            }
+        }
+
+        .required {
+            color: red;
+        }
+
+        .lost_password {
+            a {
+                color: $font;
+                @media (min-width:$bp3) {
+                    &:hover {
+                        border-bottom: 1px solid $font;
+                    }
+                }
+            }
+        }
+
+        .woocommerce-privacy-policy-link {
+            color: $primary;
+        }
+
+        &.logged-in {
+            .woocommerce {
+                display: flex;
+                flex-wrap: wrap;
+    
+                .form-row {
+                    input {
+                        max-width: 50%;
+                    }
+                }
+    
+                .title {
+                    &::after {
+                        content: '';
+                        position: static;
+                    }
+                }
+    
+                .u-columns {
+                    display: block;
+                }
+    
+                .woocommerce-MyAccount-navigation {
+                    flex: 1 1 20%;
+                    a {
+                        color: $font;
+                        @media (min-width:$bp3) {
+                            &:hover {
+                                color: $primary;
+                            }
+                        }
+                    }
+                    li {
+                        margin: 10px 0;
+                        &.is-active {
+                            a {
+                                color: $primary;
+                            }
+                        }
+                    }
+                    @media (max-width:$bp1) {
+                        flex: 1 1 100%;
+                    }
+                }
+    
+                .woocommerce-MyAccount-content {
+                    flex: 1 1 80%;
+                    padding: 0 30px;
+                    a {
+                        color: $primary;
+                    }
+                    @media (max-width:$bp1) {
+                        flex: 1 1 100%;
+                        padding: 0;
+                    }
+                    button {
+                        color:$white;
+                        padding: 10px 15px;
+                        border-radius: 20px;
+                        font-size: 13px;
+                        font-family: $pop;
+                        border: 1px solid transparent;
+                        text-transform: uppercase;
+                        margin: 10px;
+                    
+                          background-color: #f47362;
+                          @media (min-width:$bp3) {
+                            &:hover {
+                              color: $primary;
+                              background-color: #fff;
+                              border: 1px solid #f47362;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+#use_moneybox {
+    width: 20%;
+    padding: 10px;
+    border-radius: 40px;
+    @media (max-width:$bp2) {
+        width:30%;
+        max-width: 80px;
+    }
+}
+

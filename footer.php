@@ -18,7 +18,8 @@ $footer_contact = get_field( 'contact', 'options' );
 $socials_footer = $footer_contact['socials']; 
 $footer_pay = get_field( 'paynemt', 'options' ); 
 $preFotter_btns = $footer_pay['links'];
-$footer_info = get_field( 'info', 'options' ); ?>
+$footer_info = get_field( 'info', 'options' ); 
+$map_popup = get_field( 'map', 'options' );?>
 
 	<footer id="colophon" class="site-footer">
 		<div class="footer__pre">
@@ -90,6 +91,22 @@ $footer_info = get_field( 'info', 'options' ); ?>
 			</div>
 		</div>
 	</div>
+
+	<?php if($map_popup) { ?>
+		<div class="popup-map">
+		<div class="popup-map__overlay"></div>
+			<div class="popup-map__body">
+				<div class="popup-map__close"></div>
+
+				<div class="popup-map__image">
+					<?php echo wp_get_attachment_image( $map_popup['image'], 'full' )?>
+				</div>
+				<div class="popup-map__content">
+					<?php echo $map_popup['descr']; ?>
+				</div>
+			</div>
+		</div>
+	<?php } ?>	
 
 	<div class="arrowUp"><img src="<?php echo get_template_directory_uri() . '/assets/img/up-arrow.svg'?>" alt=""></div>
 

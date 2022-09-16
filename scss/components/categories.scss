@@ -54,6 +54,7 @@
     &__wrap {
       flex: 1 1 100%;
       background: $white;
+      min-height: 100%;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -64,10 +65,10 @@
       border: 1px solid transparent;
       transition: 0.35s;
       margin: 15px;
-      @media (max-width:$bp2) {
-        min-height: 400px;
+      @media (max-width:$bp1) {
+        min-height: 560px;
         justify-content: center;
-        margin: 15px;
+        margin: 7px;
       }
       
       &_excerpt {
@@ -84,6 +85,10 @@
         border-radius: 20px;
         padding: 7px 15px;
         margin-bottom: 20px;
+      }
+
+      &_wrap {
+        flex: 1 1 100%
       }
   
       &_title {
@@ -104,10 +109,10 @@
         max-width: 300px;
         min-height: 250px;
         width: 100%;
-        height: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
+        align-items: center;
       }
   
       &_order {
@@ -118,6 +123,10 @@
         padding: 20px 20px 0;
         max-width: 300px;
         width: 100%;
+        @media (max-width:$bp2) {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
         .box {
           font-size: 10px;  
           margin-right: 5px;

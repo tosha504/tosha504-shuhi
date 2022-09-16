@@ -31,4 +31,7 @@ function grd_woocommerce_script_cleaner() {
 }
 add_action( 'wp_enqueue_scripts', 'grd_woocommerce_script_cleaner', 99 );
 
+
+
+
 // remove_action( 'woocommerce_cart_collaterals' , 'woocommerce_cart_totals', 10 );

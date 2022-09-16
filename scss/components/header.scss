@@ -81,6 +81,8 @@
                     color: $white;
                 }
             }
+
+            
         }
        
         
@@ -113,6 +115,20 @@
             }
             
         }
+
+        &_shop {
+            display: flex;
+            align-items: center; 
+            li {
+                &:nth-child(1) {
+                    margin: 0 20px 0 0;
+                    @media (max-width:$bp1) {
+                       margin: 0 10px 0 0;
+                    }
+                }
+            }
+        }
+
     }
 
     &__logo {

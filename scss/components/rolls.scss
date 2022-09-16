@@ -1,0 +1,37 @@
+.rolly {
+    background-color:  $light-gray;
+    padding: 50px 0;
+    .container{
+        border-bottom: 1px solid $primary;
+    }
+
+    &__title {
+        text-align: center;
+    }
+
+    &__categories {
+       margin-bottom: 30px;   
+
+        &_item {
+           padding: 20px 0 ;
+            margin: 010px;
+           .btn {
+            white-space: nowrap;
+            width: 100%;
+            display: flex ;
+            align-items: center;
+            justify-content: center;
+           }
+        }
+
+    }
+
+    .rolls {
+        margin-bottom: 50px;
+    }
+
+    .resp-box {
+        left: 50%;
+        margin-bottom: 50px;
+    }
+}

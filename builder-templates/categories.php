@@ -8,16 +8,17 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit; 
 
+
 $products = get_sub_field('products');
 $select = get_sub_field('select');
-
-
-
 $_catname = strtolower($products->slug);
 
     $args = array(
         'post_type' => 'product',
-        'posts_per_page' => 3,
+        'posts_per_page' => -1,
+        'orderby'   => 'meta_value_num',
+        'meta_key'  => '_price',
+        'order' => 'asc',
         'tax_query' => array(
             array(
                 'taxonomy' => 'product_cat',
@@ -28,9 +29,10 @@ $_catname = strtolower($products->slug);
     );
 
 $products_list = new WP_Query( $args );
-$count = $products_list->found_posts ; ?>
+$count = $products_list->found_posts ;
+if($products->count !== 0) { ?>
 <!-- Categories start -->
-<section id="<?php echo $_catname;?>"  class="category" data-c="<?php echo $count; ?>">
+<section id="<?php echo $_catname; ?>" class="category">
     <div class="container">
         <div class="categories" data-id="<?php echo $_catname;?>">
         <?php 
@@ -49,11 +51,14 @@ $count = $products_list->found_posts ; ?>
             } ?> 
             <div class="categories__wrap">
                 <p class="categories__wrap_catname"><?php  echo $product_cat_name; ?></p>
-                <h2 class="categories__wrap_title" ><?php echo $word_count; ?></h2> 
-                <p class="categories__wrap_excerpt"><?php echo wp_trim_words( get_the_excerpt(), 7 ) ?></p>
-                <div class="categories__wrap_image" > 
-                    <?php echo wp_get_attachment_image($post_thumbnail_id, 'gallery-thumbnail-2') ?>
+                <div class="categories__wrap_wrap">
+                    <h2 class="categories__wrap_title" ><?php echo $word_count; ?></h2> 
+                    <p class="categories__wrap_excerpt"><?php echo wp_trim_words( get_the_excerpt(), 7 ) ?></p>
+                    <div class="categories__wrap_image" > 
+                        <?php echo wp_get_attachment_image($post_thumbnail_id, 'gallery-thumbnail-2') ?>
+                    </div>
                 </div>
+
                 <div class="categories__wrap_order">
                     <div class="categories__wrap_order-price">
                         <?php  echo $_product->get_price();?><?php echo get_woocommerce_currency_symbol(); ?>
@@ -77,10 +82,7 @@ $count = $products_list->found_posts ; ?>
         <?php }
         wp_reset_postdata(); ?>
         </div>
-        <div class="category__more">
-            <div class="box"></div>
-            <a class="category__more_btn" data-cat_slug="<?php echo $products->slug; ?>" href="#" >Zobacz wszystkie</a>
-        </div>
     </div>
     
 </section><!-- Categories end -->
+<?php }

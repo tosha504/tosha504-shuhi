@@ -1,4 +1,40 @@
 .woocommerce-cart{
+ .woo_pp_cart_inputs {
+  align-items: center;
+  @media (max-width:$bp1) {
+    flex-wrap: wrap;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 14px;
+    font-family: $pop;
+    border-radius: 20px;
+  }
+
+  button {
+    color:$white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-family: $pop;
+    border: 1px solid transparent;
+    text-transform: uppercase;
+    margin: 10px;
+
+      background-color: #f47362;
+      @media (min-width:$bp3) {
+        &:hover {
+          color: $primary;
+          background-color: #fff;
+          border: 1px solid #f47362;
+        }
+      }
+  }
+ }
+
   .header__box { 
     justify-content: space-between;
   }
@@ -219,3 +255,26 @@ table {
   .disabled {
     opacity: .5;
   }
+
+
+  .body {
+    &.woocommerce-cart {
+      .shop_table {
+        overflow: hidden;
+        border-radius: 20px;
+      }
+    }
+  }
+
+  .woocommerce-info {
+    a {
+      color: $primary;
+    } 
+  }
+
+  // #order_review {
+  //   table {
+  //     overflow: hidden;
+  //     border-radius: 40px;
+  //   }
+  // }
